@@ -8,7 +8,7 @@ public class Main {
         HashMap<String, Students> hash =new HashMap<>();
         hash.put(s1.getName(), s1);
         hash.put(s2.getName() ,s2 );
-//        System.out.println(hash);
+
         System.out.println(hash.get("Aryan"));
 
     }
