@@ -2,7 +2,7 @@ public class Students {
        private String name;
        private int age;
        private String Address;
-       private String hobbies;
+       private String hobbies = "NO HOBBIES";
 
 
        // Constructor
@@ -10,18 +10,18 @@ public class Students {
            this.name = name;
            this.age = age;
            this.Address =Address;
-           this.hobbies = "No Hobbies";
+           this.hobbies = hobbies;
        }public Students(String name,int age, String Address){
            this.name = name;
            this.age = age;
            this.Address =Address;
-           this.hobbies = "No Hobbies";
+//           this.hobbies =;
        }
        public void setinfo(String name,int age, String Address,String hobbies ){
            this.name = name;
            this.age = age;
            this.Address =Address;
-           this.hobbies = "No Hobbies";
+           this.hobbies = hobbies;
        }
 
         public int getAge() {
@@ -36,4 +36,11 @@ public class Students {
         public String  getName() {
             return this.name;
         }
+         @Override
+         public String toString(){
+           return "Name: " + name + "\n" +
+                   "Age: " + age + "\n" +
+                   "Address: " + Address + "\n" +
+                   "Hobbies: " + hobbies;
+         }
 }
