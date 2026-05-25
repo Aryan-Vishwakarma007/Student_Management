@@ -4,6 +4,19 @@ public class Students {
        private String Address;
        private String hobbies;
 
+
+       // Constructor
+       public Students(String name,int age, String Address,String hobbies){
+           this.name = name;
+           this.age = age;
+           this.Address =Address;
+           this.hobbies = "No Hobbies";
+       }public Students(String name,int age, String Address){
+           this.name = name;
+           this.age = age;
+           this.Address =Address;
+           this.hobbies = "No Hobbies";
+       }
        public void setinfo(String name,int age, String Address,String hobbies ){
            this.name = name;
            this.age = age;
