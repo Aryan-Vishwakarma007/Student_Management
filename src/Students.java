@@ -38,9 +38,9 @@ public class Students {
         }
          @Override
          public String toString(){
-           return "Name: " + name + "\n" +
-                   "Age: " + age + "\n" +
-                   "Address: " + Address + "\n" +
-                   "Hobbies: " + hobbies;
+           return " Name: "+name+
+                   " Age: "+age+
+                   " Address: "+Address+
+                   " Hobbies: "+hobbies;
          }
 }
