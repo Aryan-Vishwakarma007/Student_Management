@@ -15,7 +15,6 @@ public class Students {
            this.name = name;
            this.age = age;
            this.Address =Address;
-//           this.hobbies =;
        }
        public void setinfo(String name,int age, String Address,String hobbies ){
            this.name = name;
