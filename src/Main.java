@@ -28,6 +28,7 @@ public class Main {
                         System.out.println("Enter name (or type Exit to Exit):");
                          name = sc.nextLine();
                         if(name.equalsIgnoreCase("exit")) break;
+                        break;
                     } catch (Exception e) {
                         System.out.println(" Invalid Name ");
                         sc.nextLine();
@@ -38,17 +39,19 @@ public class Main {
                     try{
                         System.out.println("Enter age:");
                          age = sc.nextInt();
+                         break;
                     } catch (Exception e) {
                         System.out.println("invalid age");
                         sc.nextLine();
                     }
                 }
-                sc.nextLine();
+//                sc.nextLine();
 
                 while(true){
                     try{
                         System.out.println("Enter Address:");
                          address = sc.nextLine();
+//                         break;
 
                     } catch (Exception e) {
                         System.out.println("Invalid");
@@ -60,6 +63,7 @@ public class Main {
                     try{
                         System.out.println("Enter hobby:");
                          hobby = sc.nextLine();
+                         break;
                     } catch (Exception e) {
                         System.out.println("Invalid");
                         sc.nextLine();
