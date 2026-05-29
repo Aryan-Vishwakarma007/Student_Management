@@ -19,20 +19,52 @@ public class Main {
             }
 
             else if(opt == 2){
-                System.out.println("Enter name (or type Exit to Exit):");
-                String name = sc.nextLine();
-
-                if(name.equalsIgnoreCase("exit")) break;
-
-                System.out.println("Enter age:");
-                int age = sc.nextInt();
+                String name;
+                String address;
+                int age;
+                String hobby;
+                while(true){
+                    try{
+                        System.out.println("Enter name (or type Exit to Exit):");
+                         name = sc.nextLine();
+                        if(name.equalsIgnoreCase("exit")) break;
+                    } catch (Exception e) {
+                        System.out.println(" Invalid Name ");
+                        sc.nextLine();
+                    }
+                }
+                sc.nextLine();
+                while(true){
+                    try{
+                        System.out.println("Enter age:");
+                         age = sc.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("invalid age");
+                        sc.nextLine();
+                    }
+                }
                 sc.nextLine();
 
-                System.out.println("Enter Address:");
-                String address = sc.nextLine();
+                while(true){
+                    try{
+                        System.out.println("Enter Address:");
+                         address = sc.nextLine();
 
-                System.out.println("Enter hobby:");
-                String hobby = sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Invalid");
+                        sc.nextLine();
+                    }
+                }
+                sc.nextLine();
+                while (true){
+                    try{
+                        System.out.println("Enter hobby:");
+                         hobby = sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Invalid");
+                        sc.nextLine();
+                    }
+                }
 
                 Students s = new Students(name, age, address, hobby);
                 hash.put(name, s);
