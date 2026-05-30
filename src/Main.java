@@ -19,26 +19,30 @@ public class Main {
             }
 
             else if(opt == 2){
-                String name;
-                String address;
-                int age;
-                String hobby;
+                String name = "";
+                String address = "";
+                int age = 0;
+                String hobby = "";
+
+                //Name
                 while(true){
                     try{
                         System.out.println("Enter name (or type Exit to Exit):");
                          name = sc.nextLine();
                         if(name.equalsIgnoreCase("exit")) break;
+                        if(name.isEmpty() || !name.matches("[a-z A-Z]+")) throw new Exception("Invalid name");
                         break;
                     } catch (Exception e) {
                         System.out.println(" Invalid Name ");
-                        sc.nextLine();
                     }
                 }
-                sc.nextLine();
+
+                //Age
                 while(true){
                     try{
                         System.out.println("Enter age:");
                          age = sc.nextInt();
+                         sc.nextLine();
                          break;
                     } catch (Exception e) {
                         System.out.println("invalid age");
@@ -46,27 +50,28 @@ public class Main {
                     }
                 }
 //                sc.nextLine();
-
+//              address
                 while(true){
                     try{
                         System.out.println("Enter Address:");
                          address = sc.nextLine();
-//                         break;
+                         if(address.isEmpty()) throw new Exception("Address invalid");
+                         break;
 
                     } catch (Exception e) {
                         System.out.println("Invalid");
-                        sc.nextLine();
                     }
                 }
-                sc.nextLine();
+                //hobby
                 while (true){
                     try{
                         System.out.println("Enter hobby:");
                          hobby = sc.nextLine();
-                         break;
+                         if(hobby.isEmpty()) throw new Exception("hobby invalid");
+                        if(hobby.isEmpty() || !hobby.matches("[a-z A-Z]+")) throw new Exception("Invalid hobby");
+                        break;
                     } catch (Exception e) {
                         System.out.println("Invalid");
-                        sc.nextLine();
                     }
                 }
 
