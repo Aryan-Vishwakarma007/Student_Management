@@ -7,7 +7,7 @@ public class Main {
         HashMap<String, Students> hash = new HashMap<>();
 
         while(true){
-            System.out.println("1--> See list || 2--> Add more || 3--> Exit");
+            System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove" );
             int opt = sc.nextInt();
             sc.nextLine(); // FIX buffer
 
@@ -81,6 +81,23 @@ public class Main {
 
             else if(opt == 3){
                 break;
+            }
+            else if(opt == 4){
+                while(true){
+                    try{
+                        System.out.println("Enter the name of Student: ");
+                        String remove = sc.nextLine();
+                        if(hash.containsKey(remove)){
+                            hash.remove(remove);
+                            break;
+                        }
+                        else {
+                            System.out.println("invalid name");
+                        }
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }
             }
         }
     }
