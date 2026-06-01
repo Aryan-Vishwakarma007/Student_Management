@@ -44,5 +44,7 @@
 //    }
 //}
 record Students(String name,int age, String Address,String hobbies){
-
+        Students(String name, int age, String Address){
+            this(name,age,Address, "NO hobbies");
+        }
 }
