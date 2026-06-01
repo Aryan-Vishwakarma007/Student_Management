@@ -62,21 +62,34 @@ public class Main {
                         System.out.println("Invalid");
                     }
                 }
-                //hobby
-                while (true){
-                    try{
-                        System.out.println("Enter hobby:");
-                         hobby = sc.nextLine();
-                         if(hobby.isEmpty()) throw new Exception("hobby invalid");
-                        if(hobby.isEmpty() || !hobby.matches("[a-z A-Z]+")) throw new Exception("Invalid hobby");
+                while (true) {
+                    System.out.println("1 -- to add hobby || 2 -- no hobby");
+                    int opt1 = sc.nextInt();
+                    sc.nextLine(); //
+
+                    if (opt1 == 1) {
+                        while (true) {
+                            try {
+                                System.out.println("Enter hobby:");
+                                hobby = sc.nextLine(); // now this waits properly
+                                if (hobby.isEmpty() || !hobby.matches("[a-zA-Z ]+"))
+                                    throw new Exception("Invalid hobby");
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Invalid, try again");
+                            }
+                            Students s = new Students(name, age, address, hobby);
+                        }
+                        break; //
+                    } else if (opt1 == 2) {
+                        Students s = new Students(name, age, address);
+                        hash.put(name, s);
+
                         break;
-                    } catch (Exception e) {
-                        System.out.println("Invalid");
                     }
                 }
-
-                Students s = new Students(name, age, address, hobby);
-                hash.put(name, s);
+//                Students s = new Students(name, age, address, hobby);
+//                hash.put(name, s);
             }
 
             else if(opt == 3){
