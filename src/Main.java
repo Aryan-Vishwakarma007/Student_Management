@@ -125,12 +125,23 @@ public class Main {
                 sc.nextLine();
                 switch (opt2){
                     case 1->{
-                        String item = sc.nextLine();
+                        System.out.println("Enter the name:");
+                        String name_item = sc.nextLine();
                         hash.values().stream()
-                                .filter(n -> n.name().equalsIgnoreCase(item) )
+                                .filter(n -> n.name().equalsIgnoreCase(name_item) )
                                 .forEach(a -> {
                                     System.out.println("--- Student ---");
                                     System.out.println(a);
+                                });
+                    }
+                    case 2->{
+                        System.out.println("Enter the Age: ");
+                        int age_item = sc.nextInt();
+                        hash.values().stream()
+                                .filter(n -> n.age() == age_item)
+                                .forEach( (n)-> {
+                                    System.out.println("--- Student ---");
+                                    System.out.println(n);
                                 });
                     }
 
