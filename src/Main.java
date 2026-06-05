@@ -145,6 +145,14 @@ public class Main {
                                 });
                     }
                     case 3->{
+                        System.out.println("Enter the Hobby: ");
+                        String hobby_item = sc.nextLine();
+                        hash.values().stream()
+                                .filter(n -> n.hobbies().equalsIgnoreCase(hobby_item))
+                                .forEach(n -> {
+                                    System.out.println("--- Student ---");
+                                    System.out.println(n);
+                                });
 
                     }
 
