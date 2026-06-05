@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        HashMap<String, Students> hash = new HashMap<>();
+        var hash = new HashMap<String, Students>();
 
         while(true){
             System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove" );
@@ -86,7 +86,7 @@ public class Main {
                         break;
                     }
                 }
-                Students s = new Students(name, age, address, hobby);
+                var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
             }
 
