@@ -49,5 +49,12 @@ record Students(String name,int age, String Address,String hobbies){
             hobbies = "no hobbies !!";
         }
     }
+    @Override
+    public String toString() {
+        return "Name    : " + name + "\n" +
+                "Age     : " + age  + "\n" +
+                "Address : " + Address + "\n" +
+                "Hobbies : " + hobbies;
+    }
 
 }
