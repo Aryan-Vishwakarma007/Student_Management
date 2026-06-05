@@ -9,10 +9,11 @@ public class Main {
 
         while(true){
             System.out.println("\n");
-            System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove" );
+            System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove || 5--> Search" );
             int opt = sc.nextInt();
-            sc.nextLine(); // FIX buffer
+            sc.nextLine(); // FIXed
 
+            // opt 1 = see list
             if(opt == 1){
                 //Stream APIs!!
                 hash.values().stream()
@@ -20,12 +21,10 @@ public class Main {
                         .forEach(n -> {
                             System.out.println("--- Student ---");
                             System.out.println(n);
-
                         });
-
-
             }
 
+            //opt 2 = add more
             else if(opt == 2){
                 String name = "";
                 String address = "";
@@ -98,9 +97,12 @@ public class Main {
                 hash.put(name, s);
             }
 
+            //opt 3 = exit
             else if(opt == 3){
                 break;
             }
+
+            //opt 4 = remove
             else if(opt == 4){
                 while(true){
                     try{
@@ -117,7 +119,12 @@ public class Main {
                         throw new RuntimeException(e);
                     }
                 }
+            } else if (opt == 5) {
+                System.out.println("Search By: 1-->Name || 2-->Age || 3--> Hobby");
+                int opt2 = sc.nextInt();
+
             }
+
         }
     }
 }
