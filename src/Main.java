@@ -98,7 +98,7 @@ public class Main {
                     try{
                         System.out.println("Enter the name of Student: ");
                         String remove = sc.nextLine();
-                        if(hash.equals(remove)){
+                        if(hash.containsKey(remove)){
                             hash.remove(remove);
                             break;
                         }
