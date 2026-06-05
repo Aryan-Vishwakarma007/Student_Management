@@ -148,7 +148,7 @@ public class Main {
                         System.out.println("Enter the Hobby: ");
                         String hobby_item = sc.nextLine();
                         hash.values().stream()
-                                .filter(n -> n.hobbies().equalsIgnoreCase(hobby_item))
+                                .filter(n -> n.hobbies().trim().equalsIgnoreCase(hobby_item))
                                 .forEach(n -> {
                                     System.out.println("--- Student ---");
                                     System.out.println(n);

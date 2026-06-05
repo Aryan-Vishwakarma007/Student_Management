@@ -46,7 +46,7 @@
 record Students(String name,int age, String Address,String hobbies){
     Students{
         if(hobbies == null){
-            hobbies = "no hobbies !!";
+            hobbies = "no hobbies";
         }
     }
     @Override
