@@ -145,14 +145,23 @@ public class Main {
                                 });
                     }
                     case 3->{
-                        System.out.println("Enter the Hobby: ");
-                        String hobby_item = sc.nextLine();
-                        hash.values().stream()
-                                .filter(n -> n.hobbies().trim().equalsIgnoreCase(hobby_item))
-                                .forEach(n -> {
-                                    System.out.println("--- Student ---");
-                                    System.out.println(n);
-                                });
+                        while (true){
+                            try {
+                                System.out.println("Enter the Hobby ('Exit' to exit): ");
+                                String hobby_item = sc.nextLine();
+                                if(hobby_item.equalsIgnoreCase("Exit")) break;
+                                else{
+                                    hash.values().stream()
+                                            .filter(n -> n.hobbies().trim().equalsIgnoreCase(hobby_item))
+                                            .forEach(n -> {
+                                                System.out.println("--- Student ---");
+                                                System.out.println(n);
+                                            });
+                                }
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
 
                     }
 
