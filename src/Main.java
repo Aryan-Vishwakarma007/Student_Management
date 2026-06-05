@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -7,15 +8,26 @@ public class Main {
         var hash = new HashMap<String, Students>();
 
         while(true){
+            System.out.println("\n");
             System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove" );
             int opt = sc.nextInt();
             sc.nextLine(); // FIX buffer
 
             if(opt == 1){
-                for(String key : hash.keySet()){
-                    System.out.println("\n--- Student ---");
-                    System.out.println(hash.get(key));
-                }
+//                for(String key : hash.keySet()){
+//                    System.out.println("\n--- Student ---");
+//                    System.out.println(hash.get(key));
+//                }
+                //Stream APIs!!
+                hash.values().stream()
+                .forEach( n -> {
+                    System.out.println("\n--- Student ---" );
+                    System.out.println("\n" + n);
+                });
+
+//                hash.values().stream()
+//                        .sorted(Comparator.comparing(Students::name))
+//                        .forEach(s -> System.out.println("\n--- Student ---\n" + s));
             }
 
             else if(opt == 2){
