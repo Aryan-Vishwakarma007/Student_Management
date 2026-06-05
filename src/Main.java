@@ -14,20 +14,16 @@ public class Main {
             sc.nextLine(); // FIX buffer
 
             if(opt == 1){
-//                for(String key : hash.keySet()){
-//                    System.out.println("\n--- Student ---");
-//                    System.out.println(hash.get(key));
-//                }
                 //Stream APIs!!
                 hash.values().stream()
-                .forEach( n -> {
-                    System.out.println("\n--- Student ---" );
-                    System.out.println("\n" + n);
-                });
+                        .sorted(Comparator.comparing(Students::name))
+                        .forEach(n -> {
+                            System.out.println("--- Student ---");
+                            System.out.println(n);
 
-//                hash.values().stream()
-//                        .sorted(Comparator.comparing(Students::name))
-//                        .forEach(s -> System.out.println("\n--- Student ---\n" + s));
+                        });
+
+
             }
 
             else if(opt == 2){
