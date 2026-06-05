@@ -122,6 +122,20 @@ public class Main {
             } else if (opt == 5) {
                 System.out.println("Search By: 1-->Name || 2-->Age || 3--> Hobby");
                 int opt2 = sc.nextInt();
+                sc.nextLine()   ;
+                switch (opt2){
+                    case 1->{
+                        String item = sc.nextLine();
+                        hash.keySet().stream()
+                                .filter(n -> n.equalsIgnoreCase(item) )
+                                .forEach(a -> {
+                                    System.out.println("--- Student ---");
+                                    System.out.println(hash.keySet() =);
+                                });
+                    }
+
+
+                }
 
             }
 
