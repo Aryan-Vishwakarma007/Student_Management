@@ -103,10 +103,11 @@ public class Main {
                 var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
 
-                    String json = "{\"name\":\"" + s.name() + "\",\"age\":" + s.age() +
+                String json = "{\"name\":\"" + s.name() + "\",\"age\":" + s.age() +
                             ",\"address\":\"" + s.Address() + "\",\"hobbies\":\"" + s.hobbies() + "\"}\n";
                 try {
                     Files.writeString(path, json, StandardOpenOption.APPEND,StandardOpenOption.CREATE);
+                    System.out.println("Saved");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
