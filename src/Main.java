@@ -1,6 +1,10 @@
+import java.io.BufferedWriter;
+import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Main {
     public static void main(String[] args){
@@ -8,6 +12,7 @@ public class Main {
         var hash = new HashMap<String, Students>();
 
         while(true){
+            Path path = Paths.get("\"C:\\Users\\Priyanka Vishwakarma\\OneDrive\\Desktop\\new_java.txt\"");
             System.out.println("\n");
             System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove || 5--> Search" );
             int opt = sc.nextInt();
@@ -95,6 +100,11 @@ public class Main {
                 }
                 var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
+                try(BufferedWriter writer = Files.newBufferedWriter(path)) {
+                        while(hash.)
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
 
             //opt 3 = exit
