@@ -12,9 +12,9 @@ public class Main {
     public static void main(String[] args){
         var sc = new Scanner(System.in);
         var hash = new HashMap<String, Students>();
+        Path path = Paths.get("new_java");
 
         while(true){
-            Path path = Paths.get("new_java");
             System.out.println("\n");
             System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove || 5--> Search" );
             int opt = sc.nextInt();
@@ -102,20 +102,22 @@ public class Main {
                 }
                 var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
+
                 try(BufferedWriter writer = Files.newBufferedWriter(path)) {
                     String json = "{\"name\":\"" + s.name() + "\",\"age\":" + s.age() +
                             ",\"address\":\"" + s.Address() + "\",\"hobbies\":\"" + s.hobbies() + "\"}\n";
-                        while(hash.isEmpty() == false){
-                            hash.values().stream()
-                                    .forEach(n -> {
-                                        try {
-                                            Files.writeString(Path.of("new_java"), json, StandardOpenOption.APPEND);
-                                        } catch (IOException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    });
+                    while(hash.isEmpty() == false){
+                        hash.values().stream()
+                                .forEach(n -> {
+                                    try {
+                                        Files.writeString(path, json, StandardOpenOption.APPEND,StandardOpenOption.CREATE);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                });
+                        break;
 
-                        }
+                    }
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
