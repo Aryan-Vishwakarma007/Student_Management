@@ -103,22 +103,11 @@ public class Main {
                 var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
 
-                try(BufferedWriter writer = Files.newBufferedWriter(path)) {
                     String json = "{\"name\":\"" + s.name() + "\",\"age\":" + s.age() +
                             ",\"address\":\"" + s.Address() + "\",\"hobbies\":\"" + s.hobbies() + "\"}\n";
-                    while(hash.isEmpty() == false){
-                        hash.values().stream()
-                                .forEach(n -> {
-                                    try {
-                                        Files.writeString(path, json, StandardOpenOption.APPEND,StandardOpenOption.CREATE);
-                                    } catch (IOException e) {
-                                        throw new RuntimeException(e);
-                                    }
-                                });
-                        break;
-
-                    }
-                } catch (Exception e) {
+                try {
+                    Files.writeString(path, json, StandardOpenOption.APPEND,StandardOpenOption.CREATE);
+                } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
