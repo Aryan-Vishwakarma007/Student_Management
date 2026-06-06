@@ -1,4 +1,5 @@
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Comparator;
@@ -107,7 +108,11 @@ public class Main {
                         while(hash.isEmpty() == false){
                             hash.values().stream()
                                     .forEach(n -> {
-                                        Files.writeString(Path.of(), json, StandardOpenOption.APPEND);
+                                        try {
+                                            Files.writeString(Path.of("new_java"), json, StandardOpenOption.APPEND);
+                                        } catch (IOException e) {
+                                            throw new RuntimeException(e);
+                                        }
                                     });
 
                         }
