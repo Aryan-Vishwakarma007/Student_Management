@@ -1,5 +1,6 @@
 import java.io.BufferedWriter;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Main {
         var hash = new HashMap<String, Students>();
 
         while(true){
-            Path path = Paths.get("\"C:\\Users\\Priyanka Vishwakarma\\OneDrive\\Desktop\\new_java.txt\"");
+            Path path = Paths.get("new_java");
             System.out.println("\n");
             System.out.println("1--> See list || 2--> Add more || 3--> Exit || 4--> Remove || 5--> Search" );
             int opt = sc.nextInt();
@@ -101,7 +102,15 @@ public class Main {
                 var s = new Students(name, age, address, hobby);
                 hash.put(name, s);
                 try(BufferedWriter writer = Files.newBufferedWriter(path)) {
-                        while(hash.)
+                    String json = "{\"name\":\"" + s.name() + "\",\"age\":" + s.age() +
+                            ",\"address\":\"" + s.Address() + "\",\"hobbies\":\"" + s.hobbies() + "\"}\n";
+                        while(hash.isEmpty() == false){
+                            hash.values().stream()
+                                    .forEach(n -> {
+                                        Files.writeString(Path.of(), json, StandardOpenOption.APPEND);
+                                    });
+
+                        }
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
