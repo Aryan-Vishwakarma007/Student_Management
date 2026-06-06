@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args){
         var sc = new Scanner(System.in);
         var hash = new HashMap<String, Students>();
-        Path path = Paths.get("new_java");
+        Path path = Paths.get("src/new_java.txt");
 
         while(true){
             System.out.println("\n");
